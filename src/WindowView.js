@@ -69,7 +69,7 @@ export default class WindowView extends Component {
         this._onMomentumScrollEnd = this._onMomentumScrollEnd.bind(this)
     }
 
-    componentWillMount(){
+    UNSAFE_componentWillMount(){
 
         this._panResponder = PanResponder.create({
             //开启点击手势响应
