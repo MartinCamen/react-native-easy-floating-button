@@ -103,7 +103,7 @@ export default class SuspensionButtonView extends Component {
 
     }
 
-    componentWillMount(){
+    UNSAFE_componentWillMount(){
 
         this._panResponder = PanResponder.create({
             //开启点击手势响应
