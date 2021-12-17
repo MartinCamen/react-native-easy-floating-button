@@ -73,7 +73,7 @@ export default class MenuButtonView extends Component {
         Animated.timing(
             this.state.opacity,
             {
-                toValue:1 ,duration: 250,
+                toValue:1 ,duration: 250,useNativeDriver: true,
             },
         ).start()
 
@@ -85,7 +85,7 @@ export default class MenuButtonView extends Component {
         Animated.timing(
             this.state.opacity,
             {
-                toValue:0 ,duration: 100,
+                toValue:0 ,duration: 100,useNativeDriver: true,
             },
         ).start()
     }
@@ -104,7 +104,8 @@ export default class MenuButtonView extends Component {
                 {
                     toValue: 1,
                     duration: 400,
-                    easing: Easing.linear
+                    easing: Easing.linear,
+                    useNativeDriver: true,
                 }
             ).stop()
             this.stop = false;
@@ -116,7 +117,8 @@ export default class MenuButtonView extends Component {
                 {
                     toValue: 1,
                     duration: 400,
-                    easing: Easing.linear
+                    easing: Easing.linear,
+                    useNativeDriver: true,
                 }
             ).start(()=>this.deleteAnimate())
         }
