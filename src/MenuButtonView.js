@@ -53,7 +53,7 @@ export default class MenuButtonView extends Component {
         this.stop = false;
     }
 
-    componentWillMount(){
+    UNSAFE_componentWillMount(){
 
     }
 
