@@ -139,35 +139,35 @@ export default class WindowView extends Component {
             Animated.timing(
                 this.state.left,
                 {
-                    toValue:left ,duration: 250,
+                    toValue:left ,duration: 250, useNativeDriver: true,
                 },
             ),
 
             Animated.timing(
                 this.state.top,
                 {
-                    toValue:top ,duration: 250,
+                    toValue:top ,duration: 250, useNativeDriver: true,
                 },
             ),
 
             Animated.timing(
                 this.state.width,
                 {
-                    toValue:this.props.width ,duration: 250,
+                    toValue:this.props.width ,duration: 250, useNativeDriver: true,
                 },
             ),
 
             Animated.timing(
                 this.state.height,
                 {
-                    toValue:this.props.height ,duration: 250,
+                    toValue:this.props.height ,duration: 250, useNativeDriver: true,
                 },
             ),
 
             Animated.timing(
                 this.state.bgColorOp,
                 {
-                    toValue: 1,duration: 250,
+                    toValue: 1,duration: 250, useNativeDriver: true,
                 },
             )
         ]
@@ -181,35 +181,35 @@ export default class WindowView extends Component {
             Animated.timing(
                 this.state.left,
                 {
-                    toValue:this.props.left ,duration: 250,
+                    toValue:this.props.left ,duration: 250, useNativeDriver: true,
                 },
             ),
 
             Animated.timing(
                 this.state.top,
                 {
-                    toValue:this.props.top ,duration: 250,
+                    toValue:this.props.top ,duration: 250, useNativeDriver: true,
                 },
             ),
 
             Animated.timing(
                 this.state.width,
                 {
-                    toValue:this.props.buttonSize ,duration: 250,
+                    toValue:this.props.buttonSize ,duration: 250, useNativeDriver: true,
                 },
             ),
 
             Animated.timing(
                 this.state.height,
                 {
-                    toValue:this.props.buttonSize ,duration: 250,
+                    toValue:this.props.buttonSize ,duration: 250, useNativeDriver: true,
                 },
             ),
 
             Animated.timing(
                 this.state.bgColorOp,
                 {
-                    toValue: 0,duration: 250,
+                    toValue: 0,duration: 250, useNativeDriver: true,
                 },
             )
         ]
