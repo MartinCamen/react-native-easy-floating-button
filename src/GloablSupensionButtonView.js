@@ -233,15 +233,14 @@ export default class GloablSupensionButtonView extends Component {
 
     }
     
-    UNSAFE_componentWillUpdate(nextProps, nextState) {
-        console.log('UNSAFE_componentWillUpdate')
-        console.log(nextProps, nextState);
-    }
-    
     
     UNSAFE_componentWillReceiveProps(nextProps) {
-        console.log('UNSAFE_componentReceiveProps')
-        console.log(nextProps);
+        if (! nextProps.menus) {
+            return;
+        }
+        if (nextProps.menus.length !== this.state.menus.length) {
+            this.setState({menus : nextProps.menus})
+        }
     }
 
     static show(){
