@@ -324,7 +324,7 @@ export default class SuspensionButtonView extends Component {
         Animated.timing(
             this.state.buttonSize,
             {
-                toValue:this.props.buttonSize ,duration: 250,
+                toValue:this.props.buttonSize ,duration: 250,useNativeDriver: true,
             },
         ).start()
     }
