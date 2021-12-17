@@ -232,6 +232,17 @@ export default class GloablSupensionButtonView extends Component {
         });
 
     }
+    
+    UNSAFE_componentWillUpdate(nextProps, nextState) {
+        console.log('UNSAFE_componentWillUpdate')
+        console.log(nextProps, nextState);
+    }
+    
+    
+    UNSAFE_componentWillReceiveProps(nextProps) {
+        console.log('UNSAFE_componentReceiveProps')
+        console.log(nextProps);
+    }
 
     static show(){
 
