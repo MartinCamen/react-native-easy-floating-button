@@ -21,6 +21,7 @@ const { width, height } = Dimensions.get('window');
 let instance = null;
 let clickButtonCb = null;
 let removeButtonCb = null;
+let dispatchPositionCb = null;
 export default class GloablSupensionButtonView extends Component {
 
     static propTypes = {
@@ -105,6 +106,7 @@ export default class GloablSupensionButtonView extends Component {
         };
         instance = this;
         this.isMove = false;
+        dispatchPositionCb = this.props.dispatchPositionCb || null;
 
     }
 
@@ -172,11 +174,10 @@ export default class GloablSupensionButtonView extends Component {
 
                 }else {
 
+                    let left = this.touchX + gestureState.dx;
+                    let top = this.touchY + gestureState.dy;
+
                     if (this.props.autoAdsorption === true){
-
-                        let left = this.touchX + gestureState.dx;
-                        let top = this.touchY + gestureState.dy;
-
 
                         if (left !== 0 && left !== this.props.moveRange.width-this.props.buttonSize && top !== 0 && top !== this.props.moveRange.height-this.props.buttonSize){
 
@@ -219,6 +220,10 @@ export default class GloablSupensionButtonView extends Component {
                         }
                     }
 
+                    if (dispatchPositionCb) {
+                        dispatchPositionCb({ top: this.state.top, left: this.state.left});
+                    }
+
                 }
                 this.isMove = false;
 
@@ -232,8 +237,8 @@ export default class GloablSupensionButtonView extends Component {
         });
 
     }
-    
-    
+
+
     UNSAFE_componentWillReceiveProps(nextProps) {
         if (! nextProps.menus) {
             return;
@@ -332,6 +337,23 @@ export default class GloablSupensionButtonView extends Component {
     showWindow(){
 
         this.setState({showWindow : true})
+    }
+
+
+    static getPosition() {
+
+        return instance.getPosition();
+    }
+
+
+    getPosition() {
+
+        const { top, left} = this.state;
+
+        return {
+            top,
+            left,
+        };
     }
 
 
@@ -443,8 +465,6 @@ export default class GloablSupensionButtonView extends Component {
                             clickButtonCb(index,data)
                         }
                     }
-
-
                 }}
                 clickAutoDismiss={this.props.clickAutoDismiss}
                 menuButtonDeleteImage={this.props.menuButtonDeleteImage}
