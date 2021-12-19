@@ -139,35 +139,35 @@ export default class WindowView extends Component {
             Animated.timing(
                 this.state.left,
                 {
-                    toValue:left ,duration: 250, useNativeDriver: true,
+                    toValue:left ,duration: 250, useNativeDriver: false,
                 },
             ),
 
             Animated.timing(
                 this.state.top,
                 {
-                    toValue:top ,duration: 250, useNativeDriver: true,
+                    toValue:top ,duration: 250, useNativeDriver: false,
                 },
             ),
 
             Animated.timing(
                 this.state.width,
                 {
-                    toValue:this.props.width ,duration: 250, useNativeDriver: true,
+                    toValue:this.props.width ,duration: 250, useNativeDriver: false,
                 },
             ),
 
             Animated.timing(
                 this.state.height,
                 {
-                    toValue:this.props.height ,duration: 250, useNativeDriver: true,
+                    toValue:this.props.height ,duration: 250, useNativeDriver: false,
                 },
             ),
 
             Animated.timing(
                 this.state.bgColorOp,
                 {
-                    toValue: 1,duration: 250, useNativeDriver: true,
+                    toValue: 1,duration: 250, useNativeDriver: false,
                 },
             )
         ]
