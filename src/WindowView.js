@@ -320,7 +320,7 @@ export default class WindowView extends Component {
 
             return(
 
-                <TouchableOpacity style={{width : this.props.width, height : this.props.height - 30, paddingHorizontal: 15, flexDirection : 'row', flexWrap:'wrap' }} key={key} activeOpacity={1.0}>
+                <TouchableOpacity style={{width : this.props.width, height : this.props.height - 30, paddingHorizontal: 15, flexDirection : 'row', flexWrap:'wrap', alignItems: 'baseline' }} key={key} activeOpacity={1.0}>
                     {this.renderMenuItem(item,key,this.props.width,this.props.height - 30)}
                 </TouchableOpacity>
             )
