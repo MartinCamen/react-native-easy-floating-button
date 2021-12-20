@@ -148,7 +148,7 @@ export default class MenuButtonView extends Component {
 
         let imageSize = width < height ? width : height;
         let imageStyle = { width : imageSize / 2, height : imageSize / 2};
-        let textStyle = { color : 'white', textAlign: 'center', text : this.scaleFontSize(13), marginTop : 5 };
+        let textStyle = { color : 'white', textAlign: 'center', fontSize : this.scaleFontSize(13), marginTop : 5 };
 
         let image = data.image;
         let text = data.name;
